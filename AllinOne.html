@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Webpage with JavaScript Processing code embedded in the HTML -->
+<html> 
+
+ <head>
+    <title>Processing.JS inside Webpages: Template</title> 
+</head>
+ <body>
+    <p align="center"> 
+	<!--This draws the Procesing Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body>
+ 
+ <!-- Run all the JavaScript stuff -->
+ <!-- Include the processing.js library -->
+ <script src="processing-1.4.8.min.js"></script> 
+
+ 
+ <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(400, 400); 
+        frameRate(30);
+        
+// Your Program Code Goes Here
+
+        fill(255, 255, 0);
+        ellipse(200, 200, 200, 200);
+        noFill();
+        stroke(0, 0, 0);
+        strokeWeight(2);
+        arc(200, 200, 150, 100, 0, PI);
+        fill(0, 0, 0);
+        ellipse(250, 200, 10, 10);
+        ellipse(153, 200, 10, 10);
+
+// End Program Code 
+
+    }};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+
+</html>
